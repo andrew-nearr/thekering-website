@@ -1,0 +1,174 @@
+:root {
+  --background: #f6f4ef;
+  --text: #171717;
+  --muted: #6f6b63;
+  --border: rgba(23, 23, 23, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  color: var(--text);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    Arial,
+    sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+.site-header {
+  width: 100%;
+  padding: 28px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.language-button {
+  padding: 4px 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.language-button:hover,
+.language-button.active {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+
+.language-divider {
+  color: #aaa59c;
+  font-size: 13px;
+}
+
+.hero {
+  width: 100%;
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 72px 24px;
+  text-align: center;
+}
+
+.content {
+  width: min(780px, 100%);
+}
+
+.eyebrow {
+  margin: 0 0 26px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.24em;
+}
+
+h1 {
+  margin: 0;
+  font-family:
+    Georgia,
+    "Noto Serif SC",
+    "Songti SC",
+    "SimSun",
+    serif;
+  font-size: clamp(40px, 6vw, 76px);
+  font-weight: 500;
+  line-height: 1.16;
+  letter-spacing: -0.03em;
+}
+
+.english-name,
+.chinese-name {
+  margin: 30px 0 0;
+  color: var(--muted);
+  font-size: clamp(15px, 2vw, 18px);
+  line-height: 1.7;
+}
+
+.message {
+  width: fit-content;
+  margin: 42px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+  font-size: 15px;
+  letter-spacing: 0.05em;
+}
+
+footer {
+  width: 100%;
+  padding: 20px 48px 30px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    padding: 22px 20px;
+  }
+
+  .brand {
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 52px 20px;
+  }
+
+  h1 {
+    font-size: clamp(36px, 11vw, 52px);
+  }
+
+  footer {
+    padding: 20px;
+    line-height: 1.6;
+  }
+}
