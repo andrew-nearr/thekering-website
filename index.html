@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>开云宅配（北京）科技服务有限公司</title>
+
+  <meta
+    name="description"
+    content="开云宅配（北京）科技服务有限公司官方网站。"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="返回首页">
+      THE KERING
+    </a>
+
+    <nav class="language-switcher" aria-label="语言切换">
+      <button
+        type="button"
+        class="language-button active"
+        id="switch-chinese"
+        aria-pressed="true"
+      >
+        中文
+      </button>
+
+      <span class="language-divider">/</span>
+
+      <button
+        type="button"
+        class="language-button"
+        id="switch-english"
+        aria-pressed="false"
+      >
+        English
+      </button>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="content">
+
+      <!-- 中文内容：默认显示 -->
+      <section id="chinese-content" lang="zh-CN">
+        <p class="eyebrow">THE KERING</p>
+
+        <h1>
+          开云宅配（北京）<br>
+          科技服务有限公司
+        </h1>
+
+        <p class="english-name">
+          Kering Zhaipei (Beijing)<br>
+          Technology Service Co., Ltd.
+        </p>
+
+        <p class="message">
+          我们的新网站即将上线。
+        </p>
+      </section>
+
+      <!-- English content: hidden by default -->
+      <section id="english-content" lang="en" hidden>
+        <p class="eyebrow">THE KERING</p>
+
+        <h1>
+          Kering Zhaipei (Beijing)<br>
+          Technology Service Co., Ltd.
+        </h1>
+
+        <p class="chinese-name">
+          开云宅配（北京）科技服务有限公司
+        </p>
+
+        <p class="message">
+          Our new website is coming soon.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p id="footer-chinese">
+      &copy; <span class="current-year"></span>
+      开云宅配（北京）科技服务有限公司
+    </p>
+
+    <p id="footer-english" lang="en" hidden>
+      &copy; <span class="current-year"></span>
+      Kering Zhaipei (Beijing) Technology Service Co., Ltd.
+    </p>
+  </footer>
+
+  <script>
+    const chineseButton = document.getElementById("switch-chinese");
+    const englishButton = document.getElementById("switch-english");
+
+    const chineseContent = document.getElementById("chinese-content");
+    const englishContent = document.getElementById("english-content");
+
+    const chineseFooter = document.getElementById("footer-chinese");
+    const englishFooter = document.getElementById("footer-english");
+
+    function switchLanguage(language) {
+      const showChinese = language === "zh";
+
+      chineseContent.hidden = !showChinese;
+      englishContent.hidden = showChinese;
+
+      chineseFooter.hidden = !showChinese;
+      englishFooter.hidden = showChinese;
+
+      chineseButton.classList.toggle("active", showChinese);
+      englishButton.classList.toggle("active", !showChinese);
+
+      chineseButton.setAttribute("aria-pressed", showChinese);
+      englishButton.setAttribute("aria-pressed", !showChinese);
+
+      document.documentElement.lang = showChinese ? "zh-CN" : "en";
+
+      document.title = showChinese
+        ? "开云宅配（北京）科技服务有限公司"
+        : "Kering Zhaipei (Beijing) Technology Service Co., Ltd.";
+    }
+
+    chineseButton.addEventListener("click", function () {
+      switchLanguage("zh");
+    });
+
+    englishButton.addEventListener("click", function () {
+      switchLanguage("en");
+    });
+
+    document.querySelectorAll(".current-year").forEach(function (element) {
+      element.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
