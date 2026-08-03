@@ -54,8 +54,8 @@ button {
   width: auto;
   height: 46px;
   object-fit: contain;
+  mix-blend-mode: multiply;
 }
-
 .language-switcher {
   display: flex;
   align-items: center;
