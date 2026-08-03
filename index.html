@@ -11,18 +11,18 @@
     content="开云宅配（北京）科技服务有限公司官方网站。"
   >
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260803">
 </head>
 
 <body>
   <header class="site-header">
     <a class="brand" href="/" aria-label="开云宅配首页">
-  <img
-    src="assets/images/kering-zhaipei-logo.png"
-    alt="开云宅配 Kering Zhaipei"
-    class="brand-logo"
-  >
-</a>
+      <img
+        src="assets/images/kering-zhaipei-logo.png"
+        alt="开云宅配 Kering Zhaipei"
+        class="brand-logo"
+      >
+    </a>
     <nav class="language-switcher" aria-label="语言切换">
       <button
         type="button"
@@ -51,8 +51,6 @@
 
       <!-- 中文内容：默认显示 -->
       <section id="chinese-content" lang="zh-CN">
-        <p class="eyebrow">THE KERING</p>
-
         <h1>
           开云宅配（北京）<br>
           科技服务有限公司
@@ -70,8 +68,6 @@
 
       <!-- English content: hidden by default -->
       <section id="english-content" lang="en" hidden>
-        <p class="eyebrow">THE KERING</p>
-
         <h1>
           Kering Zhaipei (Beijing)<br>
           Technology Service Co., Ltd.
@@ -123,8 +119,8 @@
       chineseButton.classList.toggle("active", showChinese);
       englishButton.classList.toggle("active", !showChinese);
 
-      chineseButton.setAttribute("aria-pressed", showChinese);
-      englishButton.setAttribute("aria-pressed", !showChinese);
+      chineseButton.setAttribute("aria-pressed", String(showChinese));
+      englishButton.setAttribute("aria-pressed", String(!showChinese));
 
       document.documentElement.lang = showChinese ? "zh-CN" : "en";
 
