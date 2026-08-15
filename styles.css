@@ -132,6 +132,18 @@ h1 {
   letter-spacing: 0.05em;
 }
 
+.hero-image {
+  width: min(680px, 100%);
+  margin: 46px auto 0;
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 footer {
   width: 100%;
   padding: 20px 48px 30px;
@@ -164,6 +176,10 @@ footer p {
 
   .hero {
     padding: 52px 20px;
+  }
+
+  .hero-image {
+    margin-top: 34px;
   }
 
   h1 {
